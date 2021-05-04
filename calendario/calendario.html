@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <title>Cartelera</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="../style.css">
+<style>
+
+
+
+.table-fill {
+background: white;
+border-radius:3px;
+border-collapse: collapse;
+height: 320px;
+margin: auto;
+max-width: 600px;
+padding:5px;
+width: 100%;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+animation: float 5s infinite;
+}
+
+th {
+color:#D5DDE5;;
+background:#303F9F;
+border-bottom:4px solid #9ea7af;
+border-right: 1px solid #303F9F;
+font-size:23px;
+font-weight: 100;
+padding:24px;
+text-align:left;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+vertical-align:middle;
+}
+
+th:first-child {
+border-top-left-radius:3px;
+}
+
+th:last-child {
+border-top-right-radius:3px;
+border-right:none;
+}
+
+tr {
+border-top: 1px solid #C1C3D1;
+border-bottom-: 1px solid #C1C3D1;
+color:#666B85;
+font-size:16px;
+font-weight:normal;
+text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+tr:hover td {
+background:#4E5066;
+color:#FFFFFF;
+border-top: 1px solid #22262e;
+}
+
+tr:first-child {
+border-top:none;
+}
+
+tr:last-child {
+border-bottom:none;
+}
+
+tr:nth-child(odd) td {
+background:#EBEBEB;
+}
+
+tr:nth-child(odd):hover td {
+background:#4E5066;
+}
+
+tr:last-child td:first-child {
+border-bottom-left-radius:3px;
+}
+
+tr:last-child td:last-child {
+border-bottom-right-radius:3px;
+}
+
+td {
+background:#FFFFFF;
+padding:20px;
+text-align:left;
+vertical-align:middle;
+font-weight:300;
+font-size:18px;
+text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+border-right: 0px;
+}
+
+th.text-left {
+text-align: left;
+}
+
+th.text-center {
+text-align: center;
+}
+
+th.text-right {
+text-align: right;
+}
+
+td.text-left {
+text-align: left;
+}
+
+td.text-center {
+text-align: center;
+}
+
+td.text-right {
+text-align: right;
+}
+
+    .fotohp{
+      border-radius: 50px;
+    }
+
+
+    span{
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      font-size: 25px;
+    }
+
+
+    </style>
+</head>
+
+<body onload="cargarmesactual()">
+  <br><br><br>
+<div align='center'><button class="direccion" onclick='cargamesanterior()'><ion-icon size='large' name="arrow-back-circle"></ion-icon></button><span> </span><span id='mesactual'></span><span> </span><span id='annoactual'></span><span> </span><button class="direccion" onclick='cargamesposterior()'><ion-icon size='large' name="arrow-forward-circle"></ion-icon></button></div>
+
+
+    <br>
+<table id='calendario' class="table-fill">
+    <thead>
+    <tr>
+         <th>Domingo
+        </th>
+    <th >Lunes
+    </th>
+     <th >Martes
+     </th>
+         <th >Miércoles
+        </th>
+         <th >Jueves
+        </th>
+         <th>Viernes
+        </th>
+         <th>Sábado
+        </th>
+
+    </tr>
+        </thead>
+   <tbody id='cuerpocalendario'>
+    <tr>
+    <td id="1">
+        </td>
+     <td id="2">
+        </td>
+         <td id="3">
+        </td>
+         <td id="4">
+        </td>
+         <td id="5">
+        </td>
+         <td id="6">
+        </td>
+         <td id="7">
+        </td>
+    </tr>
+    <tr>
+    <td id="8">
+        </td>
+     <td id="9">
+        </td>
+         <td id="10">
+        </td>
+         <td id="11">
+        </td>
+         <td id="12">
+        </td>
+         <td id="13">
+        </td>
+         <td id="14">
+        </td>
+    </tr>
+     <tr>
+    <td id="15">
+        </td>
+     <td id="16">
+        </td>
+         <td id="17">
+        </td>
+         <td id="18">
+        </td>
+         <td id="19">
+        </td>
+         <td id="20">
+        </td>
+         <td id="21">
+        </td>
+
+    </tr>
+    <tr>
+    <td id="22">
+        </td>
+     <td id="23">
+        </td>
+         <td id="24">
+        </td>
+         <td id="25">
+        </td>
+         <td id="26">
+        </td>
+         <td id="27">
+        </td>
+         <td id="28">
+        </td>
+    </tr>
+      <tr>
+    <td id="29">
+        </td>
+     <td id="30">
+        </td>
+         <td id="31">
+        </td>
+         <td id="32">
+        </td>
+         <td id="33">
+        </td>
+         <td id="34">
+        </td>
+         <td id="35">
+        </td>
+    </tr>
+        <tr>
+    <td id="36">
+        </td>
+     <td id="37">
+        </td>
+         <td id="38">
+        </td>
+         <td id="39">
+        </td>
+         <td id="40">
+        </td>
+         <td id="41">
+        </td>
+         <td id="42">
+        </td>
+    </tr>
+       </tbody>
+    </table>
+    <br><br><br><br>
+    <div align='center' id="espacioimagengrande" style="position:absolute;margin-top:-750px; background-color:#2b2b2b; width: 100%; height: 120%; visibility:hidden;">
+      <div id="imagengrande">
+
+      </div>
+      <br>
+      <div id="espacioparatextodelapelicula" style="font-family:'Roboto'; font-size:25px; color:white;">
+
+      </div>
+    </div>
+    <script src="../jquery.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="text/javascript">
+
+          var mesactualmostrado = 0;
+
+          var annoactualmostrado = 0;
+    var meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Setiembre','Noviembre','Diciembre'];
+
+        var fechaactual = new Date();
+
+    function cargardiasalmes(mes,anno,diadeinicio)
+        {
+
+var d = new Date(anno, mes, 0);
+var ultimodia= d.getDate();
+           for (i = 1; i <= ultimodia; i++) {
+               escribeenelcampo(i+diadeinicio,i);
+
+           }
+        }
+
+        function escribeenelcampo(idnumerico,texto)
+
+        {
+
+            switch (idnumerico)
+                {
+                    case 1:
+                        {
+                        document.getElementById("1").innerHTML = texto;
+                            break;
+                        }
+                        case 2:
+                        {
+                        document.getElementById("2").innerHTML = texto;
+                            break;
+                        }
+                        case 3:
+                        {
+                        document.getElementById("3").innerHTML = texto;
+                            break;
+                        }
+                        case 4:
+                        {
+                        document.getElementById("4").innerHTML = texto;
+                            break;
+                        }
+                        case 5:
+                        {
+                        document.getElementById("5").innerHTML = texto;
+                            break;
+                        }
+                        case 6:
+                        {
+                        document.getElementById("6").innerHTML = texto;
+                            break;
+                        }
+                        case 7:
+                        {
+                        document.getElementById("7").innerHTML = texto;
+                            break;
+                        }
+                        case 8:
+                        {
+                        document.getElementById("8").innerHTML = texto;
+                            break;
+                        }
+                        case 9:
+                        {
+                        document.getElementById("9").innerHTML = texto;
+                            break;
+                        }
+                        case 10:
+                        {
+                        document.getElementById("10").innerHTML = texto;
+                            break;
+                        }
+                        case 11:
+                        {
+                        document.getElementById("11").innerHTML = texto;
+                            break;
+                        }
+                        case 12:
+                        {
+                        document.getElementById("12").innerHTML = texto;
+                            break;
+                        }
+                        case 13:
+                        {
+                        document.getElementById("13").innerHTML = texto;
+                            break;
+                        }
+                        case 14:
+                        {
+                        document.getElementById("14").innerHTML = texto;
+                            break;
+                        }
+                        case 15:
+                        {
+                        document.getElementById("15").innerHTML = texto;
+                            break;
+                        }
+                        case 16:
+                        {
+                        document.getElementById("16").innerHTML = texto;
+                            break;
+                        }
+                        case 17:
+                        {
+                        document.getElementById("17").innerHTML = texto;
+                            break;
+                        }
+                        case 18:
+                        {
+                        document.getElementById("18").innerHTML = texto;
+                            break;
+                        }
+                        case 19:
+                        {
+                        document.getElementById("19").innerHTML = texto;
+                            break;
+                        }
+                        case 20:
+                        {
+                        document.getElementById("20").innerHTML = texto;
+                            break;
+                        }
+                        case 21:
+                        {
+                        document.getElementById("21").innerHTML = texto;
+                            break;
+                        }
+                        case 22:
+                        {
+                        document.getElementById("22").innerHTML = texto;
+                            break;
+                        }
+                        case 23:
+                        {
+                        document.getElementById("23").innerHTML = texto;
+                            break;
+                        }
+                        case 24:
+                        {
+                        document.getElementById("24").innerHTML = texto;
+                            break;
+                        }
+                        case 25:
+                        {
+                        document.getElementById("25").innerHTML = texto;
+                            break;
+                        }
+                        case 26:
+                        {
+                        document.getElementById("26").innerHTML = texto;
+                            break;
+                        }
+                        case 27:
+                        {
+                        document.getElementById("27").innerHTML = texto;
+                            break;
+                        }
+                        case 28:
+                        {
+                        document.getElementById("28").innerHTML = texto;
+                            break;
+                        }
+                        case 29:
+                        {
+                        document.getElementById("29").innerHTML = texto;
+                            break;
+                        }
+                        case 30:
+                        {
+                        document.getElementById("30").innerHTML = texto;
+                            break;
+                        }
+                        case 31:
+                        {
+                        document.getElementById("31").innerHTML = texto;
+                            break;
+                        }
+                        case 32:
+                        {
+                        document.getElementById("32").innerHTML = texto;
+                            break;
+                        }
+                        case 33:
+                        {
+                        document.getElementById("33").innerHTML = texto;
+                            break;
+                        }
+                        case 34:
+                        {
+                        document.getElementById("34").innerHTML = texto;
+                            break;
+                        }
+                        case 35:
+                        {
+                        document.getElementById("35").innerHTML = texto;
+                            break;
+                        }
+
+
+                        case 36:
+                        {
+                        document.getElementById("36").innerHTML = texto;
+                            break;
+                        }
+                        case 37:
+                        {
+                        document.getElementById("37").innerHTML = texto;
+                            break;
+                        }
+                        case 38:
+                        {
+                        document.getElementById("38").innerHTML = texto;
+                            break;
+                        }
+                        case 39:
+                        {
+                        document.getElementById("39").innerHTML = texto;
+                            break;
+                        }
+                        case 40:
+                        {
+                        document.getElementById("40").innerHTML = texto;
+                            break;
+                        }
+                        case 41:
+                        {
+                        document.getElementById("41").innerHTML = texto;
+                            break;
+                        }
+                        case 42:
+                        {
+                        document.getElementById("42").innerHTML = texto;
+                            break;
+                        }
+                        case 43:
+                        {
+                        document.getElementById("43").innerHTML = texto;
+                            break;
+                        }
+
+
+                }
+        }
+
+
+
+    function cargarmesactual()
+        {
+
+            document.getElementById("mesactual").innerHTML= meses[fechaactual.getMonth()];
+            document.getElementById("annoactual").innerHTML= fechaactual.getFullYear();
+            mesactualmostrado = (fechaactual.getMonth() + 1);
+            annoactualmostrado= fechaactual.getFullYear();
+           fechadeiniciodemes= new Date((fechaactual.getMonth() + 1)+ "/1/" + fechaactual.getFullYear());
+            cargardiasalmes(mesactualmostrado,annoactualmostrado,(fechadeiniciodemes.getDay()));
+
+            cargarpeliculaspormesyanno()
+        }
+        function cargamesposterior()
+        {
+
+            var table = document.getElementById("cuerpocalendario");
+for (var i = 0, row; row = table.rows[i]; i++) {
+   //iterate through rows
+   //rows would be accessed using the "row" variable assigned in the for loop
+   for (var j = 0, col; col = row.cells[j]; j++) {
+row.cells[j].innerHTML="";
+   }
+}
+
+            if(mesactualmostrado != 12)
+                {
+                    mesactualmostrado= mesactualmostrado+1;
+
+                }
+            else
+                {
+                    mesactualmostrado=1;
+                    annoactualmostrado= annoactualmostrado+1;
+                }
+             document.getElementById("mesactual").innerHTML= meses[mesactualmostrado-1];
+            document.getElementById("annoactual").innerHTML= annoactualmostrado;
+              fechadeiniciodemes= new Date(mesactualmostrado+ "/1/" + annoactualmostrado);
+            cargardiasalmes(mesactualmostrado,annoactualmostrado,(fechadeiniciodemes.getDay()));
+            cargarpeliculaspormesyanno()
+
+        }
+
+
+         function cargamesanterior()
+        {
+
+            var table = document.getElementById("cuerpocalendario");
+for (var i = 0, row; row = table.rows[i]; i++) {
+   //iterate through rows
+   //rows would be accessed using the "row" variable assigned in the for loop
+   for (var j = 0, col; col = row.cells[j]; j++) {
+row.cells[j].innerHTML="";
+   }
+}
+
+            if(mesactualmostrado != 0)
+                {
+                    mesactualmostrado= mesactualmostrado-1;
+
+                }
+            else
+                {
+                    mesactualmostrado=11;
+                    annoactualmostrado= annoactualmostrado-1;
+                }
+             document.getElementById("mesactual").innerHTML= meses[mesactualmostrado-1];
+            document.getElementById("annoactual").innerHTML= annoactualmostrado;
+              fechadeiniciodemes= new Date(mesactualmostrado+ "/1/" + annoactualmostrado);
+            cargardiasalmes(mesactualmostrado,annoactualmostrado,(fechadeiniciodemes.getDay()));
+            cargarpeliculaspormesyanno()
+
+        }
+
+        function cargarpeliculaspormesyanno()
+       {
+
+           var persona = new Object();
+
+           $.ajax({
+             url:'/api/todaslaspeliculas',
+                // url: 'http://192.168.1.135//api/Listado',
+               type: 'POST',
+               dataType: 'json',
+               data: persona,
+               success: function (data, textStatus, xhr) {
+                   localStorage.setItem("todaslaspeliculas",JSON.stringify(data));
+                   cargalaspeliculasalcalendario();
+               },
+               error: function (xhr, textStatus, errorThrown) {
+                   alert(xhr);
+               }
+           });
+       }
+
+
+    function cargardatos(imagen){
+
+      document.getElementById("imagengrande").innerHTML = "<img src='"+imagen.src+"' width=375px' height='525px' style='border-radius:15px;'/>"
+
+      var persona = new Object();
+      persona._id=imagen.id;
+
+      $.ajax({
+        url: '/api/peliculasporid',
+        type:'POST',
+        dataType: 'json',
+        data: persona,
+        success: function(data, textStatus, xhr){
+          document.getElementById('espacioimagengrande').style.visibility = "visible";
+          document.getElementById("espacioparatextodelapelicula").innerHTML = "<ion-icon style='font-size:40px;margin-bottom:-10px; color:#303F9F;' name='videocam'></ion-icon>  Nombre: "+data[0].NOMBRE+"<br/><br/><ion-icon style='font-size:40px;margin-bottom:-10px; color:#303F9F;' name='time'></ion-icon>  Duración: "+data[0].DURACIONMINUTOS+" minutos<br/><br/><button onclick='location.href=\"../asientos/asientos.html?id="+data[0]._id+"\"'><ion-icon style='font-size:25px;margin-bottom:-4px;' name='card'></ion-icon><span> Comprar<span></button><br/><button onclick='cancelar()'><ion-icon style='font-size:25px;margin-bottom:-4px;' name='close'></ion-icon><span> Cancelar<span></button>";
+        },
+        error: function(xhr, textStatus, errorThrown){
+          alert(xhr);
+        }
+      });
+
+    }
+
+    function cancelar(){
+      document.getElementById("imagengrande").innerHTML = "";
+      document.getElementById("espacioparatextodelapelicula").innerHTML = "";
+      document.getElementById('espacioimagengrande').style.visibility = "hidden";
+    }
+
+
+    function  cargalaspeliculasalcalendario()
+       {
+           for (var ele in JSON.parse(localStorage.getItem("todaslaspeliculas")))
+               {
+                  var fechadelapelicula = new Date(JSON.parse(localStorage.getItem("todaslaspeliculas"))[ele].FECHA);
+                   if((fechadelapelicula.getMonth()+1) == mesactualmostrado && fechadelapelicula.getFullYear() == annoactualmostrado)
+                       {
+
+                           var table = document.getElementById("cuerpocalendario");
+                           for (var i = 0, row; row = table.rows[i]; i++)
+                           {
+                               for (var j = 0, col; col = row.cells[j]; j++)
+                               {
+                                   if (row.cells[j].innerHTML == fechadelapelicula.getDate()+1)
+                                       {
+                                               row.cells[j].innerHTML += "<img src='"+ JSON.parse(localStorage.getItem("todaslaspeliculas"))[ele].IMAGEN + "' width= '100px' height= '100px' class='fotohp' id='"+JSON.parse(localStorage.getItem("todaslaspeliculas"))[ele]._id+"' onclick='cargardatos(this)'/>";
+
+                                               break;
+                                       }
+
+                               }
+                           }
+
+                       }
+
+
+               }
+       }
+
+    </script>
+</body>
+</html>

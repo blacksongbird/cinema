@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Formluario</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <style media="screen">
+  .table-fill {
+background: white;
+border-radius:3px;
+border-collapse: collapse;
+height: 320px;
+margin: auto;
+max-width: 600px;
+padding:5px;
+width: 100%;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+animation: float 5s infinite;
+}
+
+th {
+color:#D5DDE5;;
+background:#303F9F;
+border-bottom:4px solid #9ea7af;
+border-right: 1px solid #303F9F;
+font-size:23px;
+font-weight: 100;
+padding:24px;
+text-align:left;
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+vertical-align:middle;
+}
+
+th:first-child {
+border-top-left-radius:3px;
+}
+
+th:last-child {
+border-top-right-radius:3px;
+border-right:none;
+}
+
+tr {
+border-top: 1px solid #C1C3D1;
+border-bottom-: 1px solid #C1C3D1;
+color:#666B85;
+font-size:16px;
+font-weight:normal;
+text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+tr:hover td {
+background:#4E5066;
+color:#FFFFFF;
+border-top: 1px solid #22262e;
+}
+
+tr:first-child {
+border-top:none;
+}
+
+tr:last-child {
+border-bottom:none;
+}
+
+tr:nth-child(odd) td {
+background:#EBEBEB;
+}
+
+tr:nth-child(odd):hover td {
+background:#4E5066;
+}
+
+tr:last-child td:first-child {
+border-bottom-left-radius:3px;
+}
+
+tr:last-child td:last-child {
+border-bottom-right-radius:3px;
+}
+
+td {
+background:#FFFFFF;
+padding:20px;
+text-align:left;
+vertical-align:middle;
+font-weight:300;
+font-size:18px;
+text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+border-right: 0px;
+}
+
+th.text-left {
+text-align: left;
+}
+
+th.text-center {
+text-align: center;
+}
+
+th.text-right {
+text-align: right;
+}
+
+td.text-left {
+text-align: left;
+}
+
+td.text-center {
+text-align: center;
+}
+
+td.text-right {
+text-align: right;
+}
+
+  </style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="contenedor-formulario">
+  <div class="wrap">
+    <div class="formulario" name="formulario_registro">
+      <div>
+        <div class="input-group">
+          <input type="text" id="NOMBRE" name="NOMBRE" placeholder="Nombre de la Película:">
+        </div>
+        <div class="input-group">
+          <input type="number" id="DURACIONMINUTOS" name="DURACIONMINUTOS" placeholder="Duracion en Minutos:">
+        </div>
+        <div class="input-group">
+          <input type="text" id="GENERO" name="GENERO" placeholder="Género:">
+        </div>
+        <div class="input-group">
+          <input type="text" id="IDIOMAAUDIO" name="IDIOMAAUDIO" placeholder="Idioma del Audio:">
+        </div>
+        <div class="input-group">
+          <input type="text" id="IDIOMASUB" name="IDIOMASUB" placeholder="Idioma de los Subtítulos:">
+        </div>
+        <div class="input-group">
+          <input type="text" id="SINOPSIS" name="SINOPSIS" placeholder="Sinopsis:">
+        </div>
+        <div class="input-group">
+          <input type="text" id="CLASIFICACION" name="CLASIFICACION" placeholder="Clasificación:">
+        </div>
+        <div class="input-group">
+          <input type="number" id="PRECIO" name="PRECIO" placeholder="Precio:">
+        </div>
+        <div class="input-group">
+          <input type="number" id="HORAINICIO" name="HORAINICIO" placeholder="Hora de Inicio:">
+        </div>
+        <div class="input-group">
+          <input type="date" id="FECHA" name="FECHA" placeholder="Fecha:">
+        </div>
+        <div class="input-group">
+          <input type="number" id="MINUTOINICIO" name="MINUTOINICIO" placeholder="Minuto de Inicio:">
+        </div>
+        <div class="input-group">
+          <input type="file" id="IMAGEN" name="IMAGEN" placeholder="Imagen:"><img id='foto' width='200px' height='250px'/>
+        </div>
+        <div class="input-group">
+          <input type="text" id="ESTADO" name="ESTADO" placeholder="Estado:">
+        </div>
+
+
+        <input type="button" id="btn-submit" value="Enviar" onclick="Guardar()">
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br><br><br><br>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Nombre de la Película:</th>
+<th class="text-left">Duración en Minutos:</th>
+<th class="text-left">Género:</th>
+<th class="text-left">Idioma del Audio:</th>
+<th class="text-left">Idioma de los Subtítulos:</th>
+<th class="text-left">Sinopsis:</th>
+<th class="text-left">Clasificación:</th>
+<th class="text-left">Precio:</th>
+<th class="text-left">Hora de Inicio:</th>
+<th class="text-left">Fecha:</th>
+<th class="text-left">Minuto de Inicio:</th>
+<th class="text-left">Imagen:</th>
+<th class="text-left">Estado:</th>
+<th class="text-left">Eliminar:</th>
+</tr>
+</thead>
+<tbody class="table-hover" id="lista">
+
+</tbody>
+<!-- partial -->
+
+  <script src="./jquery.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    function  Guardar(){
+
+      var asientos = new Object();
+
+      var asientoA1 = new Object();
+          asientoA1.NOMBREESTUDIANTE = null;
+          asientoA1.SECCION=null;
+          asientoA1.CARNET=null;
+          asientos.A1=asientoA1;
+
+      var asientoA2 = new Object();
+          asientoA2.NOMBREESTUDIANTE = null;
+          asientoA2.SECCION=null;
+          asientoA2.CARNET=null;
+          asientos.A2=asientoA2;
+
+      var asientoA3 = new Object();
+          asientoA3.NOMBREESTUDIANTE = null;
+          asientoA3.SECCION=null;
+          asientoA3.CARNET=null;
+          asientos.A3=asientoA3;
+
+      var asientoA4 = new Object();
+          asientoA4.NOMBREESTUDIANTE = null;
+          asientoA4.SECCION=null;
+          asientoA4.CARNET=null;
+          asientos.A4=asientoA4;
+
+      var asientoA5 = new Object();
+          asientoA5.NOMBREESTUDIANTE = null;
+          asientoA5.SECCION=null;
+          asientoA5.CARNET=null;
+          asientos.A5=asientoA5;
+
+      var asientoA6 = new Object();
+          asientoA6.NOMBREESTUDIANTE = null;
+          asientoA6.SECCION=null;
+          asientoA6.CARNET=null;
+          asientos.A6=asientoA6;
+
+      var asientoB1 = new Object();
+          asientoB1.NOMBREESTUDIANTE = null;
+          asientoB1.SECCION=null;
+          asientoB1.CARNET=null;
+          asientos.B1=asientoB1;
+
+      var asientoB2 = new Object();
+          asientoB2.NOMBREESTUDIANTE = null;
+          asientoB2.SECCION=null;
+          asientoB2.CARNET=null;
+          asientos.B2=asientoB2;
+
+      var asientoB3 = new Object();
+          asientoB3.NOMBREESTUDIANTE = null;
+          asientoB3.SECCION=null;
+          asientoB3.CARNET=null;
+          asientos.B3=asientoB3;
+
+      var asientoB4 = new Object();
+          asientoB4.NOMBREESTUDIANTE = null;
+          asientoB4.SECCION=null;
+          asientoB4.CARNET=null;
+          asientos.B4=asientoB4;
+
+      var asientoB5 = new Object();
+          asientoB5.NOMBREESTUDIANTE = null;
+          asientoB5.SECCION=null;
+          asientoB5.CARNET=null;
+          asientos.B5=asientoB5;
+
+      var asientoB6 = new Object();
+          asientoB6.NOMBREESTUDIANTE = null;
+          asientoB6.SECCION=null;
+          asientoB6.CARNET=null;
+          asientos.B6=asientoB6;
+
+      var asientoC1 = new Object();
+          asientoC1.NOMBREESTUDIANTE = null;
+          asientoC1.SECCION=null;
+          asientoC1.CARNET=null;
+          asientos.C1=asientoC1;
+
+      var asientoC2 = new Object();
+          asientoC2.NOMBREESTUDIANTE = null;
+          asientoC2.SECCION=null;
+          asientoC2.CARNET=null;
+          asientos.C2=asientoC2;
+
+      var asientoC3 = new Object();
+          asientoC3.NOMBREESTUDIANTE = null;
+          asientoC3.SECCION=null;
+          asientoC3.CARNET=null;
+          asientos.C3=asientoC3;
+
+      var asientoC4 = new Object();
+          asientoC4.NOMBREESTUDIANTE = null;
+          asientoC4.SECCION=null;
+          asientoC4.CARNET=null;
+          asientos.C4=asientoC4;
+
+      var asientoC5 = new Object();
+          asientoC5.NOMBREESTUDIANTE = null;
+          asientoC5.SECCION=null;
+          asientoC5.CARNET=null;
+          asientos.C5=asientoC5;
+
+      var asientoD1 = new Object();
+          asientoD1.NOMBREESTUDIANTE = null;
+          asientoD1.SECCION=null;
+          asientoD1.CARNET=null;
+          asientos.D1=asientoD1;
+
+      var asientoD2 = new Object();
+          asientoD2.NOMBREESTUDIANTE = null;
+          asientoD2.SECCION=null;
+          asientoD2.CARNET=null;
+          asientos.D2=asientoD2;
+
+      var asientoD3 = new Object();
+          asientoD3.NOMBREESTUDIANTE = null;
+          asientoD3.SECCION=null;
+          asientoD3.CARNET=null;
+          asientos.D3=asientoD3;
+
+      var asientoD4 = new Object();
+          asientoD4.NOMBREESTUDIANTE = null;
+          asientoD4.SECCION=null;
+          asientoD4.CARNET=null;
+          asientos.D4=asientoD4;
+
+      var asientoD5 = new Object();
+          asientoD5.NOMBREESTUDIANTE = null;
+          asientoD5.SECCION=null;
+          asientoD5.CARNET=null;
+          asientos.D5=asientoD5;
+
+      var asientoE1 = new Object();
+          asientoE1.NOMBREESTUDIANTE = null;
+          asientoE1.SECCION=null;
+          asientoE1.CARNET=null;
+          asientos.E1=asientoE1;
+
+      var asientoE2 = new Object();
+          asientoE2.NOMBREESTUDIANTE = null;
+          asientoE2.SECCION=null;
+          asientoE2.CARNET=null;
+          asientos.E2=asientoE2;
+
+      var asientoE3 = new Object();
+          asientoE3.NOMBREESTUDIANTE = null;
+          asientoE3.SECCION=null;
+          asientoE3.CARNET=null;
+          asientos.E3=asientoE3;
+
+      var asientoE4 = new Object();
+          asientoE4.NOMBREESTUDIANTE = null;
+          asientoE4.SECCION=null;
+          asientoE4.CARNET=null;
+          asientos.E4=asientoE4;
+
+      var asientoF1 = new Object();
+          asientoF1.NOMBREESTUDIANTE = null;
+          asientoF1.SECCION=null;
+          asientoF1.CARNET=null;
+          asientos.F1=asientoF1;
+
+      var asientoF2 = new Object();
+          asientoF2.NOMBREESTUDIANTE = null;
+          asientoF2.SECCION=null;
+          asientoF2.CARNET=null;
+          asientos.F2=asientoF2;
+
+      var asientoF3 = new Object();
+          asientoF3.NOMBREESTUDIANTE = null;
+          asientoF3.SECCION=null;
+          asientoF3.CARNET=null;
+          asientos.F3=asientoF3;
+
+      var asientoF4 = new Object();
+          asientoF4.NOMBREESTUDIANTE = null;
+          asientoF4.SECCION=null;
+          asientoF4.CARNET=null;
+          asientos.F4=asientoF4;
+
+      var asientoG1 = new Object();
+          asientoG1.NOMBREESTUDIANTE = null;
+          asientoG1.SECCION=null;
+          asientoG1.CARNET=null;
+          asientos.G1=asientoG1;
+
+      var asientoG2 = new Object();
+          asientoG2.NOMBREESTUDIANTE = null;
+          asientoG2.SECCION=null;
+          asientoG2.CARNET=null;
+          asientos.G2=asientoG2;
+
+      var asientoG3 = new Object();
+          asientoG3.NOMBREESTUDIANTE = null;
+          asientoG3.SECCION=null;
+          asientoG3.CARNET=null;
+          asientos.G3=asientoG3;
+
+      var asientoG4 = new Object();
+          asientoG4.NOMBREESTUDIANTE = null;
+          asientoG4.SECCION=null;
+          asientoG4.CARNET=null;
+          asientos.G4=asientoG4;
+
+      var asientoH1 = new Object();
+          asientoH1.NOMBREESTUDIANTE = null;
+          asientoH1.SECCION=null;
+          asientoH1.CARNET=null;
+          asientos.H1=asientoH1;
+
+      var asientoH2 = new Object();
+          asientoH2.NOMBREESTUDIANTE = null;
+          asientoH2.SECCION=null;
+          asientoH2.CARNET=null;
+          asientos.H2=asientoH2;
+
+      var asientoH3 = new Object();
+          asientoH3.NOMBREESTUDIANTE = null;
+          asientoH3.SECCION=null;
+          asientoH3.CARNET=null;
+          asientos.H3=asientoH3;
+
+      var asientoH4 = new Object();
+          asientoH4.NOMBREESTUDIANTE = null;
+          asientoH4.SECCION=null;
+          asientoH4.CARNET=null;
+          asientos.H4=asientoH4;
+
+      var objeto=new Object();
+
+      objeto.NOMBRE=document.getElementById("NOMBRE").value;
+      objeto.DURACIONMINUTOS=document.getElementById("DURACIONMINUTOS").value;
+      objeto.GENERO=document.getElementById("GENERO").value;
+      objeto.IDIOMAAUDIO=document.getElementById("IDIOMAAUDIO").value;
+      objeto.IDIOMASUB=document.getElementById("IDIOMASUB").value;
+      objeto.SINOPSIS=document.getElementById("SINOPSIS").value;
+      objeto.CLASIFICACION=document.getElementById("CLASIFICACION").value;
+      objeto.PRECIO=document.getElementById("PRECIO").value;
+      objeto.HORAINICIO=document.getElementById("HORAINICIO").value;
+      objeto.FECHA=document.getElementById("FECHA").value;
+      objeto.MINUTOINICIO=document.getElementById("MINUTOINICIO").value;
+      objeto.ASIENTOS=asientos;
+      objeto.IMAGEN=imagentexto;
+      objeto.ESTADO=document.getElementById("ESTADO").value;
+
+
+      $.ajax({
+          url:'api/nuevapelicula',
+          type:'POST',
+          dataType:'json',
+          data: objeto,
+          success:function(data,textStatus,xhr){
+            alert("Categoria Guardada correctamente");
+            document.getElementById("lista").innerHTML="";
+            for( var elemento in data)
+        {
+          document.getElementById("lista").innerHTML+="<tr><td>"+data[elemento].NOMBRE+"</td><td>"+data[elemento].DURACIONMINUTOS+"</td><td>"
+          +data[elemento].GENERO+"</td><td>"+data[elemento].IDIOMAAUDIO+"</td><td>"+data[elemento].IDIOMASUB+"</td><td>"+data[elemento].SINOPSIS+"</td><td>"
+          +data[elemento].CLASIFICACION+"</td><td>"+data[elemento].PRECIO+"</td><td>"
+          +data[elemento].HORAINICIO+"</td><td>"+data[elemento].MINUTOINICIO+"</td><td>"+data[elemento].FECHA+"</td><td><img src='"+data[elemento].IMAGEN+"' width='75px' height='225px'/></td><td>"+data[elemento].ESTADO+"</td><td><input type='button' value='Eliminar' onclick='Eliminar(\""+data[elemento]._id+"\")'/></td><tr>";
+        }
+          },
+          error: function(xhr,textStatus,errorThrown){
+            alert(xhr);
+          }
+
+      });
+    }
+
+    function Eliminar(id){
+      var objeto=new Object();
+      objeto.id=id;
+      $.ajax({
+        url:'api/eliminapelicula',
+        data: objeto,
+        type: 'POST',
+        dataType: 'json',
+        success: function (data){
+          alert('Eliminado');
+
+          document.getElementById("lista").innerHTML="";
+          for( var elemento in data)
+      {
+        document.getElementById("lista").innerHTML+="<tr><td>"+data[elemento].NOMBRE+"</td><td>"+data[elemento].DURACIONMINUTOS+"</td><td>"
+        +data[elemento].GENERO+"</td><td>"+data[elemento].IDIOMAAUDIO+"</td><td>"+data[elemento].IDIOMASUB+"</td><td>"+data[elemento].SINOPSIS+"</td><td>"
+        +data[elemento].CLASIFICACION+"</td><td>"+data[elemento].PRECIO+"</td><td>"
+        +data[elemento].HORAINICIO+"</td><td>"+data[elemento].MINUTOINICIO+"</td><td>"+data[elemento].FECHA+"</td><td><img src='"+data[elemento].IMAGEN+"' width='75px' height='100px'/></td><td>"+data[elemento].ESTADO+"</td><td><input type='button' value='Eliminar' onclick='Eliminar(\""+data[elemento]._id+"\")'/></td><tr>";
+      }
+        },
+        error: function(xHr, status, error){
+          alert(xHr);
+        }
+      });
+    }
+
+
+
+    $("#IMAGEN").change(function(){
+      readURL(this);
+    });
+    var imagentexto="";
+
+    function readURL(input){
+      if (input.files && input.files[0]){
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          imagentexto = e.target.result;
+
+          document.getElementById("foto").src=imagentexto;
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+
+</body>
+</html>
